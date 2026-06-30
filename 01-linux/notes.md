@@ -217,4 +217,25 @@ In this example, `sleep 300` creates a process, `ps aux | grep sleep` finds it, 
 
 ---
 
+## 01.3 — Linux services
+
+A service is a process that usually runs in the background and provides functionality to the system or to an application.
+
+Examples of services:
+
+- `cron` — runs scheduled tasks
+- `rsyslog` — stores system logs
+- `systemd-journald` — manages system journal logs
+- `systemd-resolved` — handles DNS name resolution
+- `ssh` — allows remote access
+- `docker` — runs containers
+
+A process is any program currently running.
+
+A service is usually a long-running background process managed by the system.
+
+In simple terms:
+
+```text
+Every service is a process, but not every process is a service.
 
