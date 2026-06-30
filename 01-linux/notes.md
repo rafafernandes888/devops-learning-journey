@@ -54,3 +54,28 @@ Example:
 
 ```bash
 grep -n ERROR app.log
+```
+
+## File permissions
+
+Linux files and directories have permissions for three groups:
+
+| Group | Meaning |
+|---|---|
+| User / owner | The owner of the file |
+| Group | Users in the file's group |
+| Others | Everyone else |
+
+Permission values:
+
+| Permission | Value | Meaning |
+|---|---|---|
+| `r` | 4 | Read |
+| `w` | 2 | Write |
+| `x` | 1 | Execute |
+
+Example:
+
+```text
+-rwxr--r--
+```
