@@ -79,3 +79,16 @@ Example:
 ```text
 -rwxr--r--
 ```
+
+## Reading parts of log files
+
+Large log files can have thousands of lines. Instead of using `cat` to show everything, we can use `head` and `tail`.
+
+| Command | Purpose |
+|---|---|
+| `head app.log` | Shows the first 10 lines |
+| `head -n 2 app.log` | Shows the first 2 lines |
+| `tail app.log` | Shows the last 10 lines |
+| `tail -n 2 app.log` | Shows the last 2 lines |
+
+`tail` is useful because recent errors usually appear at the end of log files.
