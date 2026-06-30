@@ -238,4 +238,152 @@ In simple terms:
 
 ```text
 Every service is a process, but not every process is a service.
+```
 
+### Useful service commands
+
+| Command | Purpose |
+|---|---|
+| `systemctl --version` | Shows the installed systemd version |
+| `systemctl is-system-running` | Shows the general system state |
+| `systemctl list-units --type=service --state=running --no-pager` | Lists running services |
+| `systemctl status cron --no-pager` | Shows detailed status for the cron service |
+| `systemctl is-active cron` | Shows if cron is currently running |
+| `systemctl is-enabled cron` | Shows if cron starts automatically on boot |
+| `systemctl --failed` | Shows failed services |
+| `sudo systemctl restart cron` | Restarts the cron service |
+
+### Reading service status
+
+When checking a service with:
+
+```bash
+systemctl status cron --no-pager
+```
+
+Important fields include:
+
+| Field | Meaning |
+|---|---|
+| `Loaded` | Shows if the service unit was loaded correctly |
+| `Active` | Shows if the service is running, stopped or failed |
+| `Main PID` | Shows the main process ID of the service |
+| `Memory` | Shows memory usage |
+| `CPU` | Shows CPU usage |
+| Recent logs | Show recent events related to the service |
+
+### cron
+
+`cron` is a Linux service used to run scheduled tasks automatically.
+
+Examples:
+
+- Backups
+- Maintenance scripts
+- Hourly or daily tasks
+- Startup tasks
+
+### rsyslog
+
+`rsyslog` is a Linux service used to collect and store system log messages.
+
+Common log files:
+
+```text
+/var/log/syslog
+/var/log/auth.log
+/var/log/kern.log
+```
+
+Example commands:
+
+```bash
+sudo tail -n 20 /var/log/syslog
+grep CRON /var/log/syslog | tail -n 10
+```
+
+In simple terms:
+
+```text
+cron runs scheduled tasks.
+rsyslog records what happened in the system.
+```
+
+---
+
+## 01.4 — Linux networking commands
+
+Linux networking commands are useful to diagnose connectivity, DNS, HTTP responses and open ports.
+
+### Useful networking commands
+
+| Command | Purpose |
+|---|---|
+| `ip addr` | Shows network interfaces and IP addresses |
+| `ping -c 4 google.com` | Tests connectivity to a host |
+| `curl -I https://example.com` | Shows HTTP/HTTPS response headers |
+| `ss -tuln` | Shows listening TCP/UDP ports |
+| `resolvectl query google.com` | Tests DNS name resolution |
+
+### Important concepts
+
+| Concept | Meaning |
+|---|---|
+| IP address | Identifies a machine in a network |
+| DNS | Translates domain names into IP addresses |
+| Port | Identifies a specific service on a machine |
+| HTTP | Web protocol without encryption |
+| HTTPS | Web protocol with encryption |
+| localhost | Refers to the local machine |
+
+### Examples from practice
+
+```bash
+ip addr
+```
+
+This shows interfaces such as `lo` and `eth0`.
+
+`lo` is the loopback interface and usually uses:
+
+```text
+127.0.0.1
+```
+
+`eth0` is usually the main network interface.
+
+```bash
+ping -c 4 google.com
+```
+
+If packets are transmitted and received with `0% packet loss`, connectivity is working.
+
+```bash
+curl -I https://example.com
+```
+
+A response such as:
+
+```text
+HTTP/2 200
+```
+
+means the website responded successfully.
+
+```bash
+ss -tuln
+```
+
+This shows listening ports. Port `53` is commonly used for DNS.
+
+```bash
+resolvectl query google.com
+```
+
+This checks if DNS can translate a domain name into IP addresses.
+
+---
+
+## 01.5 — System logs
+
+To be completed.
