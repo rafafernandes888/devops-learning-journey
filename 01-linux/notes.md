@@ -386,4 +386,63 @@ This checks if DNS can translate a domain name into IP addresses.
 
 ## 01.5 — System logs
 
-To be completed.
+## 01.5 — System logs
+
+System logs help understand what happened in the operating system and services.
+
+Logs usually contain:
+
+- Date and time
+- Machine name
+- Service or process name
+- Message describing what happened
+
+### Useful log commands
+
+| Command | Purpose |
+|---|---|
+| `journalctl -n 20 --no-pager` | Shows the last 20 system journal logs |
+| `journalctl -u cron -n 20 --no-pager` | Shows the last 20 logs for the cron service |
+| `sudo tail -n 20 /var/log/syslog` | Shows the last 20 lines from the system log file |
+| `sudo grep -i error /var/log/syslog \| tail -n 10` | Searches recent system log errors |
+
+### journalctl
+
+`journalctl` is used to read logs from the systemd journal.
+
+Example:
+
+```bash
+journalctl -n 20 --no-pager
+```
+
+This shows recent logs from the system.
+
+Example:
+
+```bash
+journalctl -u cron -n 20 --no-pager
+```
+
+This shows recent logs only for the `cron` service.
+
+### syslog
+
+`/var/log/syslog` is a system log file where many system events can be stored.
+
+Example:
+
+```bash
+sudo tail -n 20 /var/log/syslog
+```
+
+This shows recent lines from the system log file.
+
+### Important idea
+
+```text
+journalctl reads logs from the systemd journal.
+syslog is a log file stored in /var/log/syslog.
+```
+
+Both are useful for investigating what happened in the system.
