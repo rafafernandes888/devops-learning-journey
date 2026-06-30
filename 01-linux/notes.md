@@ -101,3 +101,36 @@ Example:
 
 ```bash
 tail -f app.log
+```
+
+## 01.2 — Linux processes
+
+A process is a program that is currently running.
+
+Examples of processes:
+
+- Terminal sessions
+- Linux commands
+- Shell scripts
+- System services
+- Applications
+
+Each process has a PID, which means Process ID.
+
+## Useful process commands
+
+| Command | Purpose |
+|---|---|
+| `ps` | Shows processes from the current terminal |
+| `ps aux` | Shows processes from the whole system |
+| `ps aux \| grep bash` | Searches for processes containing `bash` |
+| `sleep 300 &` | Starts a process in the background |
+| `kill PID` | Terminates a process by its PID |
+| `top` | Shows processes in real time |
+
+## Example
+
+```bash
+sleep 300 &
+ps aux | grep sleep
+kill 10233
