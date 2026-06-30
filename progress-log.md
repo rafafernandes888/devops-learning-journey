@@ -15,4 +15,8 @@
 ## Day 2
 
 - Continued the Linux fundamentals module.
-- Started reviewing Linux services and how they are managed in a DevOps environment.
+- Studied Linux services using `systemctl`.
+- Practiced checking service status, active/enabled states and failed services.
+- Reviewed `cron` as a scheduled task service and `rsyslog` as a system logging service.
+- Practiced basic Linux networking commands such as `ip addr`, `ping`, `curl`, `ss` and `resolvectl`.
+- Reviewed system logs using `journalctl` and `/var/log/syslog`.
