@@ -1,0 +1,6 @@
+INFO Application started
+ERROR Failed to connect to database
+INFO Request completed
+ERROR Payment service timeout
+WARN Disk usage is high
+ERROR Authentication failed
