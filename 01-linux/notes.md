@@ -92,3 +92,12 @@ Large log files can have thousands of lines. Instead of using `cat` to show ever
 | `tail -n 2 app.log` | Shows the last 2 lines |
 
 `tail` is useful because recent errors usually appear at the end of log files.
+
+## Following logs in real time
+
+`tail -f` is used to follow a log file in real time.
+
+Example:
+
+```bash
+tail -f app.log
