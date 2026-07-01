@@ -1,0 +1,5 @@
+INFO Service started
+WARN Disk usage high
+ERROR Database connection failed
+INFO Request completed
+ERROR Tiemout contacting payment service

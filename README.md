@@ -29,7 +29,7 @@ I am currently strengthening my knowledge in Linux, networking, Git, Docker, CI/
 
 | Topic | Status |
 |---|---|
-| Linux | In progress |
+| Linux | Completed |
 | Networking | Not started |
 | Git | In progress |
 | Docker | Not started |
