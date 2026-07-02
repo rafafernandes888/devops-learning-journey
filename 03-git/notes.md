@@ -20,3 +20,29 @@ Typical workflow:
 4. Switch back to `main`.
 5. Merge the feature branch.
 6. Push the updated `main`.
+
+## Merge conflicts
+
+A merge conflict happens when Git cannot automatically combine changes from two branches.
+
+This usually happens when two branches change the same lines in the same file.
+
+Conflict markers:
+
+- `<<<<<<< HEAD`: current branch version
+- `=======`: separator between versions
+- `>>>>>>> branch-name`: incoming branch version
+
+To resolve a conflict:
+
+1. Open the conflicted file.
+2. Choose or combine the correct changes.
+3. Remove the conflict markers.
+4. Stage the resolved file:
+   - `git add <file>`
+5. Finish the merge:
+   - `git commit`
+
+Useful command:
+
+- `git status`: shows which files are in conflict and what to do next.
