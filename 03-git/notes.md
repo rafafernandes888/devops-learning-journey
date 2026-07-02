@@ -2,7 +2,7 @@
 
 ## Branches
 
-A branch is an independent line of development.
+A branch is an independent line of development used to test changes safely.
 
 Common commands:
 
