@@ -228,3 +228,52 @@ In simple terms:
 Service running + port listening = curl responds.
 Service stopped = curl cannot connect.
 ```
+
+## Troubleshooting checklist
+
+When a website or service does not work, check the problem step by step:
+
+1. DNS resolution:
+   - `resolvectl query github.com`
+   - Confirms if a domain name resolves to an IP address.
+
+2. Network connectivity:
+   - `ping -c 4 github.com`
+   - Confirms if the host is reachable at network level.
+   - Note: some servers may block ICMP/ping.
+
+3. HTTP response:
+   - `curl -I https://github.com`
+   - Shows the HTTP status code and response headers.
+   - `200` means OK.
+   - `404` means the server responded, but the page was not found.
+   - `500` means server error.
+   - `503` means service unavailable.
+
+4. Local services and ports:
+   - `python3 -m http.server 8000`
+   - Starts a simple local HTTP server on port 8000.
+   - `curl -I http://localhost:8000`
+   - Tests the local service.
+
+5. Check listening ports:
+   - `ss -tuln | grep 8000`
+   - Shows if a service is listening on port 8000.
+
+6. Find which process is using a port:
+   - `lsof -i :8000`
+   - Shows the process name and PID.
+
+7. Stop a process using a port:
+   - `kill <PID>`
+
+Common errors:
+
+- `Address already in use`
+  - The port is already being used by another process.
+
+- `Could not connect to server`
+  - No service is running or listening on that port.
+
+- `404 Not Found`
+  - The server is reachable, but the requested page/path does not exist.
