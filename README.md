@@ -31,8 +31,8 @@ I am currently strengthening my knowledge in Linux, networking, Git, Docker, CI/
 |---|---|
 | Linux | Completed |
 | Networking | Completed |
-| Git | In progress |
-| Docker | Not started |
+| Git | Completed |
+| Docker | In Progress |
 | CI/CD | Not started |
 | AWS | Not started |
 | Monitoring | Not started |
